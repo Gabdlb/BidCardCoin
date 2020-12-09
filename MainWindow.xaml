@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BidCardCoin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="1080" Width="1920">
+
+    <Grid HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1912" Background="#437FDB" RenderTransformOrigin="0.5,0.5">
         
+
+        <TextBlock Height="67" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontSize="48" Margin="32,12,1546,0" Grid.RowSpan="2"><Run Text="  "/><Run Text="BidGameCoin"/></TextBlock>
+        <Button Content="Connexion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="203" Margin="1530,37,0,0" Height="42" FontSize="20" FontWeight="Bold" Grid.RowSpan="2" BorderThickness="1" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="1790,0,10,-1" Source="pngtree-hammer-judge-icon-png-image_1541693.png" Stretch="Fill" Grid.RowSpan="2"/>
+
+
     </Grid>
+
+
 </Window>
