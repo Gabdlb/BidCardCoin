@@ -1,5 +1,4 @@
-﻿using BidCardCoin.Vue.Ajouter;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace BidCardCoin.Vue
 {
     /// <summary>
-    /// Logique d'interaction pour Article.xaml
+    /// Logique d'interaction pour Vendeur.xaml
     /// </summary>
-    public partial class Article : Page
+    public partial class Vendeur : Page
     {
-        public Article()
+        public Vendeur()
         {
             InitializeComponent();
-        }
-
-        private void Btn_AjArt(object sender, RoutedEventArgs e)
-        {
-            article.Content = new Ajout_Article();
         }
     }
 }

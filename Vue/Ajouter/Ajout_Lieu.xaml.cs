@@ -1,5 +1,4 @@
-﻿using BidCardCoin.Vue.Ajouter;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,21 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BidCardCoin.Vue
+namespace BidCardCoin.Vue.Ajouter
 {
     /// <summary>
-    /// Logique d'interaction pour Article.xaml
+    /// Logique d'interaction pour Ajout_Lieu.xaml
     /// </summary>
-    public partial class Article : Page
+    public partial class Ajout_Lieu : Page
     {
-        public Article()
+        public Ajout_Lieu()
         {
             InitializeComponent();
         }
 
-        private void Btn_AjArt(object sender, RoutedEventArgs e)
+        private void Btn_Retour(object sender, RoutedEventArgs e)
         {
-            article.Content = new Ajout_Article();
+            lieu.Content = new Lieu();
         }
     }
 }
