@@ -5,10 +5,10 @@ namespace BidCardCoin
     public class PersonneViewModel : INotifyPropertyChanged
     {
         private int idPersonne;
-        private string Nom;
-        private string Prenom;
-        private string Telephone;
-        private string Email;
+        private string nom;
+        private string prenom;
+        private string telephone;
+        private string email;
         private string concat = "Ajouter ";
 
 
@@ -19,10 +19,10 @@ namespace BidCardCoin
         public PersonneViewModel(int id, string nom, string prenom, string telephone, string email)
         {
             this.idPersonne = id;
-            this.nomPersonneProperty = nom;
-            this.prenomPersonneProperty = prenom;
-            this.telephonePersonne = telephone;
-            this.emailPersonne = email;
+            this.nomProperty = nom;
+            this.prenomProperty = prenom;
+            this.telephoneProperty = telephone;
+            this.emailProperty = email;
         }
         public int idPersonneProperty
         {
@@ -32,38 +32,47 @@ namespace BidCardCoin
                 idPersonne = value;
             }
         }
-        public String nomPersonneProperty
+        public String nomProperty
         {
-            get { return nomPersonne; }
+            get { return nom; }
             set
             {
-                nomPersonne = value.ToUpper();
-                ConcatProperty = "Ajouter " + nomPersonne + " " + prenomPersonne;
-                OnPropertyChanged("nomPersonneProperty"); // indique au système de binding que la valeur a changé
+                nom = value.ToUpper();
+                ConcatProperty = "Ajouter " + nom + " " + prenom;
+                OnPropertyChanged("nomProperty"); // indique au système de binding que la valeur a changé
             }
 
         }
-        public String prenomPersonneProperty
+        public String prenomProperty
         {
-            get { return prenomPersonne; }
+            get { return prenom; }
             set
             {
-                this.prenomPersonne = value;
-                ConcatProperty = "Ajouter " + nomPersonne + " " + prenomPersonne;
-                OnPropertyChanged("prenomPersonneProperty");
+                this.prenom = value;
+                ConcatProperty = "Ajouter " + nom + " " + prenom;
+                OnPropertyChanged("prenomProperty");
             }
         }
 
-        public MetierViewModel MetierPersonneProperty
+        public String telephoneProperty
         {
-            get { return metierPersonne; }
+            get { return telephone; }
             set
             {
-                metierPersonne = value;
+                this.telephone = value;
+                OnPropertyChanged("telephoneProperty");
             }
         }
 
-        public DateTime DateNaisPersonneProperty { get => dateNaisPersonne; set => dateNaisPersonne = value; }
+        public String emailProperty
+        {
+            get { return email; }
+            set
+            {
+                this.email = value;
+                OnPropertyChanged("email");
+            }
+        }
 
         public int AgeProperty
         {
