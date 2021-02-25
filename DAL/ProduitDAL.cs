@@ -7,15 +7,15 @@ using MySql.Data.MySqlClient;
 
 namespace BidCardCoin
 {
-     public class PersonneDAL
+     public class ProduitDAL
     {
-        public PersonneDAL()
+        public ProduitDAL()
         { }
 
-        public static ObservableCollection<PersonneDAO> selectPersonnes()
+        public static ObservableCollection<ProduitDAO> selectProduits()
         {
-            ObservableCollection<PersonneDAO> l = new ObservableCollection<PersonneDAO>();
-            string query = "SELECT * FROM personne;";
+            ObservableCollection<ProduitDAO> l = new ObservableCollection<ProduitDAO>();
+            string query = "SELECT * FROM Produit;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -25,44 +25,44 @@ namespace BidCardCoin
 
                 while (reader.Read())
                 {
-                    PersonneDAO p = new PersonneDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
                     l.Add(p);
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Il y a un problème dans la table personne : {0}", e.StackTrace);
+                MessageBox.Show("Il y a un problème dans la table Produit : {0}", e.StackTrace);
             }
             reader.Close();
             return l;
         }
 
-        public static void updatePersonne(PersonneDAO p)
+        public static void updateProduit(ProduitDAO p)
         {
-            string query = "UPDATE personne set nom=\"" + p.nomDAO + "\", prenom=\"" + p.prenomDAO + "\", telephone=\"" + p.telephoneDAO + "\", email=\"" + p.emailDAO + "\"WHERE idPersonne = \"" + p.idPersonneDAO + "\";";
+            string query = "UPDATE Produit set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\"WHERE idProduit = \"" + p.idProduitDAO + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static void insertPersonne(PersonneDAO p)
+        public static void insertProduit(ProduitDAO p)
         {
-            int id = getMaxIdPersonne() + 1;
-            string query = "INSERT INTO personne VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.prenomDAO + "\",\"" + p.telephoneDAO + "\",\"" + p.emailDAO + "\");";
+            int id = getMaxIdProduit() + 1;
+            string query = "INSERT INTO Produit (idProduit, Nom, Description) VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.descriptionDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerPersonne(int id)
+        public static void supprimerProduit(int id)
         {
-            string query = "DELETE FROM personne WHERE idPersonne = \"" + id + "\";";
+            string query = "DELETE FROM Produit WHERE idProduit = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static int getMaxIdPersonne()
+        public static int getMaxIdProduit()
         {
-            int maxIdPersonne = 0;
-            string query = "SELECT MAX(idPersonne) FROM personne;";
+            int maxIdProduit = 0;
+            string query = "SELECT MAX(idProduit) FROM Produit;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
 
             int cnt = cmd.ExecuteNonQuery();
@@ -74,25 +74,25 @@ namespace BidCardCoin
                 reader.Read();
                 if (!reader.IsDBNull(0))
                 {
-                    maxIdPersonne = reader.GetInt32(0);
+                    maxIdProduit = reader.GetInt32(0);
                 }
                 else
                 {
-                    maxIdPersonne = 0;
+                    maxIdProduit = 0;
                 }
             }
             reader.Close();
-            return maxIdPersonne;
+            return maxIdProduit;
         }
 
-        public static PersonneDAO getPersonne(int idPersonne)
+        public static ProduitDAO getProduit(int idProduit)
         {
-            string query = "SELECT * FROM personne WHERE id=" + idPersonne + ";";
+            string query = "SELECT * FROM Produit WHERE id=" + idProduit + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            PersonneDAO pers = new PersonneDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+            ProduitDAO pers = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
             reader.Close();
             return pers;
         }

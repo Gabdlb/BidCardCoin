@@ -67,11 +67,57 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\ProduitViewModel .cs" />
+    <Compile Include="DAL\ProduitDAL.cs" />
+    <Compile Include="DAO\ProduitDAO.cs" />
+    <Compile Include="ORM\ProduitORM.cs" />
+    <Compile Include="Vue\Ajouter\Ajout_Produit.xaml.cs">
+      <DependentUpon>Ajout_Produit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Ajouter\Ajout_Personne.xaml.cs">
+      <DependentUpon>Ajout_Personne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Personne.xaml.cs">
+      <DependentUpon>Personne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Utilisateur.xaml.cs">
+      <DependentUpon>Utilisateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Vendeur.xaml.cs">
+      <DependentUpon>Vendeur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Vente.xaml.cs">
+      <DependentUpon>Vente.xaml</DependentUpon>
+    </Compile>
     <Page Include="Vue\Accueil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vue\Ajouter\Ajout_Produit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Ajouter\Ajout_Personne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Article.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Commissaire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Lieu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vue\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Lot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,13 +137,41 @@
     <Compile Include="Vue\Accueil.xaml.cs">
       <DependentUpon>Accueil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vue\Article.xaml.cs">
+      <DependentUpon>Article.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Commissaire.xaml.cs">
+      <DependentUpon>Commissaire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Lieu.xaml.cs">
+      <DependentUpon>Lieu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Lot.xaml.cs">
+      <DependentUpon>Lot.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vue\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vue\Personne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Utilisateur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Vendeur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Vente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
