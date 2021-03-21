@@ -64,5 +64,16 @@ namespace BidCardCoin.Vue
         {
             article.Content = new Ajout_Produit();
         }
+
+        private void Btn_Suppr(object sender, RoutedEventArgs e)
+        {
+            if (List_Produit.SelectedItem is ProduitViewModel)
+            {
+                ProduitViewModel toRemove = (ProduitViewModel)List_Produit.SelectedItem;
+                lp.Remove(toRemove);
+                List_Produit.Items.Refresh();
+                ProduitORM.supprimerProduit(selectedProduitId);
+            }
+        }
     }
 }
