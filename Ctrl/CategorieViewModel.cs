@@ -2,27 +2,25 @@
 using System.ComponentModel;
 namespace BidCardCoin
 {
-    public class ProduitViewModel : INotifyPropertyChanged
+    public class CategorieViewModel : INotifyPropertyChanged
     {
-        public int idProduit;
+        public int idCategorie;
         public string nom;
-        public string description;
 
-        public ProduitViewModel() { }
+        public CategorieViewModel() { }
 
-        public ProduitViewModel(int id, string nom, string description)
+        public CategorieViewModel(int id, string nom)
         {
-            this.idProduit = id;
+            this.idCategorie = id;
             this.nomProperty = nom;
-            this.descriptionProperty = description;
 
         }
-        public int idProduitProperty
+        public int idCategorieProperty
         {
-            get { return idProduit; }
+            get { return idCategorie; }
             set
             {
-                idProduit = value;
+                idCategorie = value;
             }
         }
         public String nomProperty
@@ -35,15 +33,6 @@ namespace BidCardCoin
             }
 
         }
-        public String descriptionProperty
-        {
-            get { return description; }
-            set
-            {
-                this.description = value;
-                OnPropertyChanged("descriptionProperty");
-            }
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -54,7 +43,7 @@ namespace BidCardCoin
             {
                 handler(this, new PropertyChangedEventArgs(info));
                 this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                ProduitORM.updateProduit(this);
+                CategorieORM.updateCategorie(this);
             }
         }
     }

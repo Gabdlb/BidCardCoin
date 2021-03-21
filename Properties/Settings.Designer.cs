@@ -26,7 +26,7 @@ namespace BidCardCoin.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=;persistsecurityinfo=True;database=bcc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=;persistsecurityinfo=True;database=bcc2")]
         public string DatabaseConnectionString {
             get {
                 return ((string)(this["DatabaseConnectionString"]));

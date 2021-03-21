@@ -67,9 +67,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\CategorieViewModel.cs" />
+    <Compile Include="Ctrl\Produit_CategorieViewModel.cs" />
     <Compile Include="Ctrl\ProduitViewModel .cs" />
+    <Compile Include="DAL\CategorieDAL.cs" />
+    <Compile Include="DAL\Produit_CategorieDAL.cs" />
     <Compile Include="DAL\ProduitDAL.cs" />
+    <Compile Include="DAO\CategorieDAO.cs" />
+    <Compile Include="DAO\Produit_CategorieDAO.cs" />
     <Compile Include="DAO\ProduitDAO.cs" />
+    <Compile Include="ORM\CategorieORM.cs" />
+    <Compile Include="ORM\Produit_CategorieORM.cs" />
     <Compile Include="ORM\ProduitORM.cs" />
     <Compile Include="Vue\Ajouter\Ajout_Produit.xaml.cs">
       <DependentUpon>Ajout_Produit.xaml</DependentUpon>

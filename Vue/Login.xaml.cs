@@ -33,7 +33,7 @@ namespace BidCardCoin.Vue
         private void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
 
-            MainWindow wnd = new MainWindow();
+            Accueil wnd = new Accueil();
             wnd.ShowDialog();
             this.Close();
         }
