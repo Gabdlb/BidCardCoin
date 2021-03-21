@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BidCardCoin
+namespace BidCardCoin.Vue
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Vente.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Vente : Page
     {
-        public MainWindow()
+        public Vente()
         {
             InitializeComponent();
         }
