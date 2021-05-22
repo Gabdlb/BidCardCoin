@@ -25,6 +25,10 @@ namespace BidCardCoin.Vue
         int selectedProduitId;
         ProduitViewModel myDataObject; // Objet de liaison avec la vue lors de l'ajout d'une Produit par exemple.
         ObservableCollection<ProduitViewModel> lp;
+        ObservableCollection<ProduitViewModel> az;
+
+        ProduitViewModel myDataObjectCP; // Objet de liaison avec la vue lors de l'ajout d'une Produit par exemple.
+        ObservableCollection<ProduitViewModel> cp;
         public Article()
         {
             InitializeComponent();
@@ -52,17 +56,42 @@ namespace BidCardCoin.Vue
             }
         }
 
+    
         void loadProduits()
         {
             lp = ProduitORM.listeProduits();
+            az = ProduitORM.listeProduits();
             myDataObject = new ProduitViewModel();
             //LIEN AVEC la VIEW
             List_Produit.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
+            ComboBoxProduit.ItemsSource = az;
         }
 
         private void Btn_AjArt(object sender, RoutedEventArgs e)
         {
             article.Content = new Ajout_Produit();
         }
+
+        private void Btn_ProdCat(object sender, RoutedEventArgs e)
+        {
+            article.Content = null;
+            article.Content = new Ajout_ProduitCategorie();
+            
+        }
+
+        private void BtnAfficherCat(object sender, RoutedEventArgs e)
+        {
+            cp = ProduitORM.getNomProduit(Convert.ToInt32(ComboBoxProduit.SelectedValue.ToString()));
+
+            myDataObjectCP = new ProduitViewModel();
+
+            listeCP.ItemsSource = cp;
+
+            listeCP.DataContext = myDataObjectCP;
+
+            listeCP.Items.Refresh();
+        }
+
+     
     }
 }

@@ -19,6 +19,11 @@ namespace BidCardCoin
             this.nomDAO = nomDAO;
         }
 
+        public CategorieDAO(string nomDAO)
+        {
+            this.nomDAO = nomDAO;
+        }
+
         public static ObservableCollection<CategorieDAO> listeCategories()
         {
             ObservableCollection<CategorieDAO> l = CategorieDAL.selectCategories();
@@ -30,6 +35,13 @@ namespace BidCardCoin
             CategorieDAO p = CategorieDAL.getCategorie(idCategorie);
             return p;
         }
+
+        public static ObservableCollection<CategorieDAO> getNomCategorie(int idCategorie)
+        {
+            ObservableCollection<CategorieDAO> p = CategorieDAL.getNomCategorie(idCategorie);
+            return p;
+        }
+
 
         public static void updateCategorie(CategorieDAO p)
         {

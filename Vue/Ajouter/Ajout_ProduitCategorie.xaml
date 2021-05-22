@@ -9,14 +9,21 @@
       Title="Ajout_ProduitCategorie" Background="Wheat">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50" Width="516" FontSize="48" FontWeight="Bold"><Run Text="Ajouter une personne"/></TextBlock>
-        <TextBox Name="nomTextBox" TextChanged="nomChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding nomProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,292,0,0" FontSize="36"/>
-        <TextBox Name="prenomTextBox" TextChanged="prenomChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding prenomProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,402,0,0" FontSize="36"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Margin="646,308,0,0" FontSize="22" Background="CornflowerBlue"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Margin="646,418,0,0" FontSize="22" Background="CornflowerBlue"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50" Width="516" FontSize="48" FontWeight="Bold"><Run Text="Ajouter une relation"/></TextBlock>
+      
+        
+        <ComboBox Name="ComboBoxProduit" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="416" Margin="781,292,0,0"
+                              DisplayMemberPath="nomProperty"
+                              SelectedValuePath="idProduitProperty"
+                              SelectedValue="{Binding idProduitProperty}"/>
+        <ComboBox Name="ComboBoxCategorie" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="416" Margin="781,402,0,0"
+                              DisplayMemberPath="nomProperty"
+                              SelectedValuePath="idCategorieProperty"
+                              SelectedValue="{Binding idCategorieProperty}"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Produit" VerticalAlignment="Top" Margin="646,308,0,0" FontSize="22" Background="CornflowerBlue"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Categorie" VerticalAlignment="Top" Margin="646,418,0,0" FontSize="22" Background="CornflowerBlue"/>
         <Button Click="Btn_Ajout" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="1052,862,0,0" Height="52" FontSize="24" Background="LawnGreen"/>
         <Button Click="Btn_Retour" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="646,882,0,0" Height="32" FontSize="20" Background="OrangeRed"/>
-        <Frame x:Name="produitcategorie" NavigationUIVisibility="Hidden"/>
-        <ComboBox HorizontalAlignment="Left" Margin="1218,235,0,0" VerticalAlignment="Top" Width="120"/>
+        <Frame x:Name="produitcategorie" NavigationUIVisibility="Hidden" Margin="10,10,-10,-10"/>
     </Grid>
 </Page>

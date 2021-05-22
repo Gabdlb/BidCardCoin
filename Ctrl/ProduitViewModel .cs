@@ -17,6 +17,13 @@ namespace BidCardCoin
             this.descriptionProperty = description;
 
         }
+
+        public ProduitViewModel(string nom)
+        {
+            
+            this.nomProperty = nom;
+            
+        }
         public int idProduitProperty
         {
             get { return idProduit; }

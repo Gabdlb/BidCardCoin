@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -21,6 +22,11 @@ namespace BidCardCoin.Vue
         int selectedCategorieId;
         CategorieViewModel myDataObject; // Objet de liaison avec la vue lors de l'ajout d'une Categorie par exemple.
         ObservableCollection<CategorieViewModel> lp;
+
+        ObservableCollection<CategorieViewModel> az;
+
+        CategorieViewModel myDataObjectCP; // Objet de liaison avec la vue lors de l'ajout d'une Produit par exemple.
+        ObservableCollection<CategorieViewModel> cp;
         public Categorie()
         {
             InitializeComponent();
@@ -51,14 +57,29 @@ namespace BidCardCoin.Vue
         void loadCategories()
         {
             lp = CategorieORM.listeCategories();
+            az = CategorieORM.listeCategories();
             myDataObject = new CategorieViewModel();
             //LIEN AVEC la VIEW
             List_Categorie.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
+            ComboBoxCategorie.ItemsSource = az;
         }
 
         private void Btn_AjPrs(object sender, RoutedEventArgs e)
         {
             categorie.Content = new Ajout_Categorie();
+        }
+
+        private void BtnAfficherProd(object sender, RoutedEventArgs e)
+        {
+            cp = CategorieORM.getNomCategorie(Convert.ToInt32(ComboBoxCategorie.SelectedValue.ToString()));
+
+            myDataObjectCP = new CategorieViewModel();
+
+            listeCP.ItemsSource = cp;
+
+            listeCP.DataContext = myDataObjectCP;
+
+            listeCP.Items.Refresh();
         }
     }
 }

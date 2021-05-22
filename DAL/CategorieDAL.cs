@@ -96,5 +96,31 @@ namespace BidCardCoin
             reader.Close();
             return pers;
         }
+
+        public static ObservableCollection<CategorieDAO> getNomCategorie(int idCategorie)
+        {
+
+            ObservableCollection<CategorieDAO> l = new ObservableCollection<CategorieDAO>();
+            string query = "SELECT p.nom FROM produit_categorie c join categorie ca on ca.idCategorie=c.idCategorie join produit p on p.idProduit=c.idProduit WHERE ca.idCategorie =" + idCategorie + ";";
+            MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
+            MySqlDataReader reader = null;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    CategorieDAO p = new CategorieDAO(reader.GetString(0));
+                    l.Add(p);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Il y a un problème dans la table CategorieProduit : {0}", e.StackTrace);
+            }
+            reader.Close();
+            return l;
+        }
     }
 }

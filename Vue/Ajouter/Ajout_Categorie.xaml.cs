@@ -32,7 +32,7 @@ namespace BidCardCoin.Vue.Ajouter
 
         public void nomChanged(object sender, TextChangedEventArgs e)
         {
-            myDataObject.nomProperty = nomTextBox.Text;
+            myDataObject.nomsProperty = nomTextBox.Text;
         }
         private void Btn_Ajout(object sender, RoutedEventArgs e)
         {

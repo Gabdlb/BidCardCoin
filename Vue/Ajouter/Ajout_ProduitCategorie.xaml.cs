@@ -17,6 +17,13 @@ namespace BidCardCoin.Vue.Ajouter
     {
         Produit_CategorieViewModel myDataObject; // Objet de liaison avec la vue lors de l'ajout d'une personne par exemple.
         ObservableCollection<Produit_CategorieViewModel> lp;
+
+        ProduitViewModel myDataObjectProduit; // Objet de liaison avec la vue lors de l'ajout d'une personne par exemple.
+        ObservableCollection<ProduitViewModel> pr;
+
+        CategorieViewModel myDataObjectCategorie; // Objet de liaison avec la vue lors de l'ajout d'une personne par exemple.
+        ObservableCollection<CategorieViewModel> lc;
+
         int compteur = 0;
         public Ajout_ProduitCategorie()
         {
@@ -24,17 +31,13 @@ namespace BidCardCoin.Vue.Ajouter
             DALConnection.OpenConnection();
             // Initialisation de la liste des personnes via la BDD.
             loadProduitCategories();
+            loadProduits();
+            loadCategories();
+
 
             appliquerContexte();
         }
-        public void prenomChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.idProduitProperty = prenomTextBox.Text;
-        }
-        public void nomChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.idCategorieProperty = nomTextBox.Text;
-        }
+       
         private void Btn_Ajout(object sender, RoutedEventArgs e)
         {
             lp.Add(myDataObject);
@@ -47,9 +50,9 @@ namespace BidCardCoin.Vue.Ajouter
 
             // Comme le contexte des élément de la vue est encore l'ancien PersonneViewModel,
             // On refait les liens entre age, slider, textbox, bouton et le nouveau PersonneViewModel
-            nomTextBox.DataContext = myDataObject;
-            prenomTextBox.DataContext = myDataObject;
-            produitcategorie.Content = new Article();
+
+            ComboBoxProduit.DataContext = myDataObject;
+            ComboBoxCategorie.DataContext = myDataObject;
 
         }
         private void Btn_Retour(object sender, RoutedEventArgs e)
@@ -66,8 +69,26 @@ namespace BidCardCoin.Vue.Ajouter
         void appliquerContexte()
         {
             // Lien avec les textbox
-            nomTextBox.DataContext = myDataObject;
-            prenomTextBox.DataContext = myDataObject;
+            ComboBoxProduit.DataContext = myDataObject;
+            ComboBoxCategorie.DataContext = myDataObject;
+        }
+
+        void loadProduits()
+        {
+            pr = ProduitORM.listeProduits();
+            myDataObjectProduit = new ProduitViewModel();
+            ComboBoxProduit.ItemsSource = pr;
+            //LIEN AVEC la VIEW
+            //List_Produit.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
+        }
+
+        void loadCategories()
+        {
+            lc = CategorieORM.listeCategories();
+            myDataObjectCategorie = new CategorieViewModel();
+            ComboBoxCategorie.ItemsSource = lc;
+            //LIEN AVEC la VIEW
+            //List_Categorie.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
         }
     }
 }

@@ -21,6 +21,11 @@ namespace BidCardCoin
             this.descriptionDAO = descriptionDAO;
         }
 
+        public ProduitDAO(string nomDAO)
+        {
+            this.nomDAO = nomDAO;
+        }
+
         public static ObservableCollection<ProduitDAO> listeProduits()
         {
             ObservableCollection<ProduitDAO> l = ProduitDAL.selectProduits();
@@ -30,6 +35,12 @@ namespace BidCardCoin
         public static ProduitDAO getProduit(int idProduit)
         {
             ProduitDAO p = ProduitDAL.getProduit(idProduit);
+            return p;
+        }
+
+        public static ObservableCollection<ProduitDAO> getNomProduit(int idProduit)
+        {
+            ObservableCollection<ProduitDAO> p = ProduitDAL.getNomProduit(idProduit);
             return p;
         }
 

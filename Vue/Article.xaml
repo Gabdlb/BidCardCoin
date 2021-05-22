@@ -42,11 +42,34 @@
 
             </DataGrid.Columns>
         </DataGrid>
+
+
         <Button Content="Ajouter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="1618,556,0,0" Height="82" FontSize="36" Background="LightYellow" Click="Btn_AjArt"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1583,730,0,0" Height="82" FontSize="36" Background="Red"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1577,738,0,0" Height="82" FontSize="36" Background="Red"/>
         <TextBlock HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" Text="Liste des articles" VerticalAlignment="Top" Height="62" Width="413" FontSize="48" FontWeight="Bold"/>
 
+
+        <Button Content="Le many to many UwU" HorizontalAlignment="Left" Margin="1640,451,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.5,0.5" Height="60" Click="Btn_ProdCat"/>
+
+
+        <DataGrid Name="listeCP" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="155,619,0,166" BorderBrush="Black" Background="#FFA4A4A4"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          Width="1361">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Nom" Binding="{Binding nomProperty, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Click="BtnAfficherCat" Content="Voir Categorie associé" HorizontalAlignment="Left" Margin="1692,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox Name="ComboBoxProduit"
+                  DisplayMemberPath="nomProperty"
+                      SelectedValuePath="idProduitProperty"
+                      SelectedValue="{Binding idProduitProperty}" HorizontalAlignment="Left" Margin="1618,406,0,0" VerticalAlignment="Top" Width="120"/>
+
         <Frame x:Name="article" NavigationUIVisibility="Hidden"/>
+        
+
     </Grid>
 
 

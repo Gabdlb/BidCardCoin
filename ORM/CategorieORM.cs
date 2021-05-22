@@ -29,10 +29,22 @@ namespace BidCardCoin
             return l;
         }
 
+        public static ObservableCollection<CategorieViewModel> getNomCategorie(int idCategorie)
+        {
+            ObservableCollection<CategorieDAO> pDAO = CategorieDAO.getNomCategorie(idCategorie);
+            ObservableCollection<CategorieViewModel> p = new ObservableCollection<CategorieViewModel>();
+            foreach (CategorieDAO element in pDAO)
+            {
+                CategorieViewModel pr = new CategorieViewModel(element.nomDAO);
+                p.Add(pr);
+            }
+
+            return p;
+        }
 
         public static void updateCategorie(CategorieViewModel p)
         {
-            CategorieDAO.updateCategorie(new CategorieDAO(p.idCategorieProperty, p.nomProperty));
+            CategorieDAO.updateCategorie(new CategorieDAO(p.idCategorieProperty, p.nomsProperty));
         }
 
         public static void supprimerCategorie(int id)
@@ -42,7 +54,7 @@ namespace BidCardCoin
 
         public static void insertCategorie(CategorieViewModel p)
         {
-            CategorieDAO.insertCategorie(new CategorieDAO(p.idCategorieProperty, p.nomProperty));
+            CategorieDAO.insertCategorie(new CategorieDAO(p.idCategorieProperty, p.nomsProperty));
         }
     }
 }

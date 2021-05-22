@@ -12,7 +12,13 @@ namespace BidCardCoin
         public CategorieViewModel(int id, string nom)
         {
             this.idCategorie = id;
-            this.nomProperty = nom;
+            this.nomsProperty = nom;
+
+        }
+
+        public CategorieViewModel(string nom)
+        {
+            this.nomsProperty = nom;
 
         }
         public int idCategorieProperty
@@ -23,7 +29,7 @@ namespace BidCardCoin
                 idCategorie = value;
             }
         }
-        public String nomProperty
+        public String nomsProperty
         {
             get { return nom; }
             set

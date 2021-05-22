@@ -17,6 +17,19 @@ namespace BidCardCoin
             return p;
         }
 
+        public static ObservableCollection<ProduitViewModel> getNomProduit(int idProduit)
+        {
+            ObservableCollection<ProduitDAO> pDAO = ProduitDAO.getNomProduit(idProduit);
+            ObservableCollection<ProduitViewModel> p = new ObservableCollection<ProduitViewModel>();
+            foreach (ProduitDAO element in pDAO)
+            {
+                ProduitViewModel pr = new ProduitViewModel(element.nomDAO);
+                p.Add(pr);
+            }
+          
+            return p;
+        }
+
         public static ObservableCollection<ProduitViewModel> listeProduits()
         {
             ObservableCollection<ProduitDAO> lDAO = ProduitDAO.listeProduits();
