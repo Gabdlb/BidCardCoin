@@ -37,13 +37,6 @@ namespace BidCardCoin
             return l;
         }
 
-        public static void updateProduit_Categorie(Produit_CategorieDAO p)
-        {
-            string query = "UPDATE Produit_Categorie set idCategorie=\"" + p.idCategorieDAO + "\"WHERE idProduit = \"" + p.idProduitDAO + "\";";
-            MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
-            MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
-            cmd.ExecuteNonQuery();
-        }
         public static void insertProduit_Categorie(Produit_CategorieDAO p)
         {
            
@@ -52,9 +45,9 @@ namespace BidCardCoin
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerProduit_Categorie(int id)
+        public static void supprimerProduit_Categorie(int idProduit, int idCategorie)
         {
-            string query = "DELETE FROM Produit_Categorie WHERE idProduit = \"" + id + "\";";
+            string query = "DELETE FROM Produit_Categorie WHERE idProduit = \"" + idProduit + "\"AND idCategorie = \"" + idCategorie + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

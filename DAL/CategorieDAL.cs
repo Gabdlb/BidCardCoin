@@ -47,7 +47,7 @@ namespace BidCardCoin
         public static void insertCategorie(CategorieDAO p)
         {
             int id = getMaxIdCategorie() + 1;
-            string query = "INSERT INTO Categorie (idCategorie, Nom, Description) VALUES (\"" + id + "\",\"" + p.nomDAO + "\");";
+            string query = "INSERT INTO Categorie (idCategorie, Nom) VALUES (\"" + id + "\",\"" + p.nomDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();

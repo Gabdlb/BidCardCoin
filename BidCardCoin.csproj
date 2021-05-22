@@ -79,11 +79,20 @@
     <Compile Include="ORM\CategorieORM.cs" />
     <Compile Include="ORM\Produit_CategorieORM.cs" />
     <Compile Include="ORM\ProduitORM.cs" />
+    <Compile Include="Vue\Ajouter\Ajout_Categorie.xaml.cs">
+      <DependentUpon>Ajout_Categorie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Ajouter\Ajout_Produit.xaml.cs">
       <DependentUpon>Ajout_Produit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vue\Ajouter\Ajout_Personne.xaml.cs">
       <DependentUpon>Ajout_Personne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Ajouter\Ajout_ProduitCategorie.xaml.cs">
+      <DependentUpon>Ajout_ProduitCategorie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Categorie.xaml.cs">
+      <DependentUpon>Categorie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vue\Personne.xaml.cs">
       <DependentUpon>Personne.xaml</DependentUpon>
@@ -101,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vue\Ajouter\Ajout_Categorie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vue\Ajouter\Ajout_Produit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,7 +122,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vue\Ajouter\Ajout_ProduitCategorie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vue\Article.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Categorie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

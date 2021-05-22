@@ -2,21 +2,21 @@
 using System.ComponentModel;
 namespace BidCardCoin
 {
-    public class Produit_CategorieViewModel : INotifyPropertyChanged
+    public class Produit_CategorieViewModel
     {
-        private ProduitViewModel idProduit;
-        private CategorieViewModel idCategorie;
+        private int idProduit;
+        private int idCategorie;
 
         public Produit_CategorieViewModel() { }
 
-        public Produit_CategorieViewModel(ProduitViewModel produit, CategorieViewModel categorie)
+        public Produit_CategorieViewModel(int idProduit, int idCategorie)
         {
-            this.idProduit = produit;
-            this.idCategorie = categorie;
+            this.idProduit = idProduit;
+            this.idCategorie = idCategorie;
 
 
         }
-        public ProduitViewModel idProduitProperty
+        public int idProduitProperty
         {
             get { return idProduit; }
             set
@@ -24,7 +24,7 @@ namespace BidCardCoin
                 idProduit = value;
             }
         }
-        public CategorieViewModel idCategorieProperty
+        public int idCategorieProperty
         {
             get { return idCategorie; }
             set
@@ -33,19 +33,6 @@ namespace BidCardCoin
                 //OnPropertyChanged("nomProperty"); // indique au système de binding que la valeur a changé
             }
 
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string info)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(info));
-                this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                Produit_CategorieORM.updateProduit_Categorie(this);
-            }
         }
     }
 }

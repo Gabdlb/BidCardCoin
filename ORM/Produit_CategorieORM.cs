@@ -13,11 +13,7 @@ namespace BidCardCoin
         public static Produit_CategorieViewModel getProduit_Categorie(int id)
         {
             Produit_CategorieDAO pDAO = Produit_CategorieDAO.getProduit_Categorie(id);
-            int idProduit = pDAO.idProduitDAO;
-            ProduitViewModel pr = ProduitORM.getProduit(idProduit);
-            int idCategorie = pDAO.idCategorieDAO;
-            CategorieViewModel c = CategorieORM.getCategorie(idCategorie);
-            Produit_CategorieViewModel p = new Produit_CategorieViewModel(pr, c);
+            Produit_CategorieViewModel p = new Produit_CategorieViewModel(pDAO.idProduitDAO, pDAO.idCategorieDAO);
             return p;
         }
 
@@ -27,30 +23,20 @@ namespace BidCardCoin
             ObservableCollection<Produit_CategorieViewModel> l = new ObservableCollection<Produit_CategorieViewModel>();
             foreach (Produit_CategorieDAO element in lDAO)
             {
-                int idProduit = element.idProduitDAO;
-                ProduitViewModel pr = ProduitORM.getProduit(idProduit);
-                int idCategorie = element.idCategorieDAO;
-                CategorieViewModel c = CategorieORM.getCategorie(idCategorie);
-                Produit_CategorieViewModel p = new Produit_CategorieViewModel(pr, c);
+                Produit_CategorieViewModel p = new Produit_CategorieViewModel(element.idProduitDAO, element.idCategorieDAO);
                 l.Add(p);
             }
             return l;
         }
 
-
-        public static void updateProduit_Categorie(Produit_CategorieViewModel p)
+        public static void supprimerProduit_Categorie(int idProduit, int idCategorie)
         {
-            Produit_CategorieDAO.updateProduit_Categorie(new Produit_CategorieDAO(p.idProduitProperty.idProduit, p.idCategorieProperty.idCategorie));
-        }
-
-        public static void supprimerProduit_Categorie(int id)
-        {
-            Produit_CategorieDAO.supprimerProduit_Categorie(id);
+            Produit_CategorieDAO.supprimerProduit_Categorie(idProduit, idCategorie);
         }
 
         public static void insertProduit_Categorie(Produit_CategorieViewModel p)
         {
-            Produit_CategorieDAO.insertProduit_Categorie(new Produit_CategorieDAO(p.idProduitProperty.idProduit, p.idCategorieProperty.idCategorie));
+            Produit_CategorieDAO.insertProduit_Categorie(new Produit_CategorieDAO(p.idProduitProperty, p.idCategorieProperty));
         }
     }
 }

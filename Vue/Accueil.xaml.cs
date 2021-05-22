@@ -30,9 +30,9 @@ namespace BidCardCoin.Vue
             accueil.Content = new Article();
         }
 
-        private void Button_Vente(object sender, RoutedEventArgs e)
+        private void Button_Categorie(object sender, RoutedEventArgs e)
         {
-            accueil.Content = new Vente();
+            accueil.Content = new Categorie();
         }
 
         private void Button_Lieu(object sender, RoutedEventArgs e)
