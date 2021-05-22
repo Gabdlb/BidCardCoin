@@ -25,20 +25,15 @@ namespace BidCardCoin
             return l;
         }
 
-        public static Produit_CategorieDAO getProduit_Categorie(int idProduit)
+        public static Produit_CategorieDAO getProduit_Categorie(int id)
         {
-            Produit_CategorieDAO p = Produit_CategorieDAL.getProduit_Categorie(idProduit);
+            Produit_CategorieDAO p = Produit_CategorieDAL.getProduit_Categorie(id);
             return p;
         }
 
-        public static void updateProduit_Categorie(Produit_CategorieDAO p)
+        public static void supprimerProduit_Categorie(int idProduitProperty, int idCategorieProperty)
         {
-            Produit_CategorieDAL.updateProduit_Categorie(p);
-        }
-
-        public static void supprimerProduit_Categorie(int id)
-        {
-            Produit_CategorieDAL.supprimerProduit_Categorie(id);
+            Produit_CategorieDAL.supprimerProduit_Categorie(idProduitProperty, idCategorieProperty);
         }
 
         public static void insertProduit_Categorie(Produit_CategorieDAO p)

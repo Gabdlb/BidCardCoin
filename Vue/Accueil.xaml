@@ -13,7 +13,7 @@
         <Image Margin="1790,10,10,-21" Source="/Asset/BCC_Logo.png" Stretch="Fill"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Button Content="Article" MinWidth="100" Background="#86D2FD" Click="Button_Article" Margin="0,0,0,-29" Width="145" FontSize="25"/>
-            <Button Content="Vente" MinWidth="100" Width="145" Background="#86D2FD" Click="Button_Vente" Margin="0,0,0,-29" FontSize="25"/>
+            <Button Content="Categorie" MinWidth="100" Width="145" Background="#86D2FD" Click="Button_Categorie" Margin="0,0,0,-29" FontSize="25"/>
             <Button Content="Lieu d'enchère" MinWidth="100" Background="#86D2FD" Click="Button_Lieu" Margin="0,0,0,-29" FontSize="25" Width="178"/>
             <Button Content="Commissaire priseur" MinWidth="100" Width="248" Background="#86D2FD" Click="Button_Comm" Margin="0,0,0,-29" FontSize="25"/>
             <Button Content="Personne" MinWidth="100" Background="#86D2FD" Click="Button_Personne" Margin="0,0,0,-29" FontSize="25" Width="136"/>
