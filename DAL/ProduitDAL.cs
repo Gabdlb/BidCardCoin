@@ -25,7 +25,7 @@ namespace BidCardCoin
 
                 while (reader.Read())
                 {
-                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6));
+                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6), reader.GetInt32(7));
                     l.Add(p);
                 }
             }
@@ -39,7 +39,7 @@ namespace BidCardCoin
 
         public static void updateProduit(ProduitDAO p)
         {
-            string query = "UPDATE Produit set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\", prix_depart=\"" + p.prix_departDAO + "\", prix_reserve=\"" + p.prix_reserveDAO + "\", etat=\"" + p.etatDAO + "\", artiste=\"" + p.artisteDAO +  "\"WHERE idProduit = \"" + p.idProduitDAO + "\" ;";
+            string query = "UPDATE Produit set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\", prix_depart=\"" + p.prix_departDAO + "\", prix_reserve=\"" + p.prix_reserveDAO + "\", etat=\"" + p.etatDAO + "\", artiste=\"" + p.artisteDAO + "\", idLot=\"" + p.idLotDAO + "\"WHERE idProduit = \"" + p.idProduitDAO + "\" ;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -47,7 +47,7 @@ namespace BidCardCoin
         public static void insertProduit(ProduitDAO p)
         {
             int id = getMaxIdProduit() + 1;
-            string query = "INSERT INTO Produit (idProduit, Nom, Description, prix_depart, prix_reserve, etat, artiste) VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.descriptionDAO + "\",\"" + p.prix_departDAO + "\",\"" + p.prix_reserveDAO + "\",\"" + p.etatDAO + "\",\"" + p.artisteDAO + "\");";
+            string query = "INSERT INTO Produit (idProduit, Nom, Description, prix_depart, prix_reserve, etat, artiste, idLot) VALUES (\"" + id + "\",\"" + p.nomDAO + "\",\"" + p.descriptionDAO + "\",\"" + p.prix_departDAO + "\",\"" + p.prix_reserveDAO + "\",\"" + p.etatDAO + "\",\"" + p.artisteDAO + "\",\"" + p.idLotDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
@@ -92,7 +92,7 @@ namespace BidCardCoin
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            ProduitDAO pers = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6));
+            ProduitDAO pers = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5), reader.GetString(6), reader.GetInt32(7));
             reader.Close();
             return pers;
         }

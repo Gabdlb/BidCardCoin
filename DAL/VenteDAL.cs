@@ -50,7 +50,7 @@ namespace BidCardCoin
         public static void insertVente(VenteDAO p)
         {
             int id = getMaxIdVente() + 1;
-            string query = "INSERT INTO Vente (id, attribute, date_debut, date_fin) VALUES (\"" + id + "\",\"" + p.attributeDAO + "\",\"" + p.date_debutDAO + "\",\"" + p.date_finDAO + "\");";
+            string query = "INSERT INTO Vente (id, attribute, date_debut, date_fin) VALUES (\"" + id + "\",\"" + p.attributeDAO + "\",\"" + p.date_debutDAO + "\",\"" + p.date_finDAO + "\"WHERE id = \"" + p.idVenteDAO + "\";";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();

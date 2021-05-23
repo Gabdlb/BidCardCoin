@@ -18,6 +18,10 @@ namespace BidCardCoin.Vue.Ajouter
     {
         ProduitViewModel myDataObject; // Objet de liaison avec la vue lors de l'ajout d'une Produit par exemple.
         ObservableCollection<ProduitViewModel> lp;
+
+        LotViewModel myDataObjectLot; // Objet de liaison avec la vue lors de l'ajout d'une Produit par exemple.
+        ObservableCollection<LotViewModel> rt;
+
         int compteur = 0;
         public Ajout_Produit()
         {
@@ -26,39 +30,12 @@ namespace BidCardCoin.Vue.Ajouter
             DALConnection.OpenConnection();
             // Initialisation de la liste des Produits via la BDD.
             loadProduits();
+            loadLots();
 
             appliquerContexte();
         }
 
-        public void descriptionChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.descriptionProperty = descriptionTextBox.Text;
-        }
-        public void nomChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.nomProperty = nomTextBox.Text;
-        }
-
-        public void prixdChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.prix_departProperty = Int32.Parse(prixdTextBox.Text);
-        }
-
-        public void prixrChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.prix_reserveProperty = Int32.Parse(prixrTextBox.Text);
-        }
-
-        public void etatChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.etatProperty = etatTextBox.Text;
-        }
-
-        public void artisteChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.artisteProperty = artisteTextBox.Text;
-        }
-
+        
         private void Btn_Ajout(object sender, RoutedEventArgs e)
         {
             myDataObject.idProduitProperty = ProduitDAL.getMaxIdProduit() + 1;
@@ -77,6 +54,9 @@ namespace BidCardCoin.Vue.Ajouter
             descriptionTextBox.DataContext = myDataObject;
             etatTextBox.DataContext = myDataObject;
             artisteTextBox.DataContext = myDataObject;
+            prixdTextBox.DataContext = myDataObject;
+            prixrTextBox.DataContext = myDataObject;
+            lotComboBox.DataContext = myDataObject;
             Produit.Content = new Article();
 
         }
@@ -91,13 +71,23 @@ namespace BidCardCoin.Vue.Ajouter
             //LIEN AVEC la VIEW
         }
 
+        void loadLots()
+        {
+            rt = LotORM.listeLots();
+            myDataObjectLot = new LotViewModel();
+            lotComboBox.ItemsSource = rt;
+            //LIEN AVEC la VIEW
+        }
         void appliquerContexte()
         {
             // Lien avec les textbox
             nomTextBox.DataContext = myDataObject;
             descriptionTextBox.DataContext = myDataObject;
-            //etatTextBox.DataContext = myDataObject;
-            //artisteTextBox.DataContext = myDataObject;
+            etatTextBox.DataContext = myDataObject;
+            artisteTextBox.DataContext = myDataObject;
+            prixdTextBox.DataContext = myDataObject;
+            prixrTextBox.DataContext = myDataObject;
+            lotComboBox.DataContext = myDataObject;
         }
 
        

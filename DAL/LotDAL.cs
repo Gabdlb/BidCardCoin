@@ -42,7 +42,7 @@ namespace BidCardCoin
 
         public static void updateLot(LotDAO p)
         {
-            string query = "UPDATE Lot set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\", prix_depart=\"" + p.prix_departDAO + "\" ;";
+            string query = "UPDATE Lot set nom=\"" + p.nomDAO + "\", description=\"" + p.descriptionDAO + "\", prix_depart=\"" + p.prix_departDAO + "\"WHERE id = \"" + p.idLotDAO + "\" ;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

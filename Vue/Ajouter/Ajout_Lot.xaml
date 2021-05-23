@@ -10,9 +10,9 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50" Width="406" FontSize="48" FontWeight="Bold"><Run Text="Ajouter un lot"/></TextBlock>
-        <TextBox Name="nomTextBox" TextChanged="nomChanged" Text="{Binding nomProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,292,0,0" FontSize="36" />
-        <TextBox Name="descriptionTextBox" TextChanged="descriptionChanged" Text="{Binding descriptionProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,402,0,0" FontSize="36"/>
-        <TextBox Name="prixTextBox" TextChanged="prixChanged" Text="{Binding prix_departProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,506,0,0" FontSize="36"/>
+        <TextBox Name="nomTextBox"  Text="{Binding nomProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,292,0,0" FontSize="36" />
+        <TextBox Name="descriptionTextBox"  Text="{Binding descriptionProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,402,0,0" FontSize="36"/>
+        <TextBox Name="prixTextBox"  Text="{Binding prix_departProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap"  VerticalAlignment="Top" Width="416" Margin="781,506,0,0" FontSize="36"/>
         
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="nom" VerticalAlignment="Top" Margin="646,308,0,0" FontSize="22" Background="CornflowerBlue"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="description" VerticalAlignment="Top" Margin="646,418,0,0" FontSize="22" Background="CornflowerBlue"/>

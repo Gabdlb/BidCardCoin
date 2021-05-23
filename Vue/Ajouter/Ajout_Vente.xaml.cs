@@ -55,7 +55,8 @@ namespace BidCardCoin.Vue.Ajouter
             // Comme le contexte des élément de la vue est encore l'ancien VenteViewModel,
             // On refait les liens entre age, slider, textbox, bouton et le nouveau VenteViewModel
             attributeTextBox.DataContext = myDataObject;
-            
+            dateDebut.DataContext = myDataObject;
+            dateFin.DataContext = myDataObject;
             vente.Content = new Vente();
 
         }
@@ -74,7 +75,8 @@ namespace BidCardCoin.Vue.Ajouter
         {
             // Lien avec les textbox
             attributeTextBox.DataContext = myDataObject;
-            
+            dateDebut.DataContext = myDataObject;
+            dateFin.DataContext = myDataObject;
         }
     }
 }

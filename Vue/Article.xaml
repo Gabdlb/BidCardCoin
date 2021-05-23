@@ -37,6 +37,7 @@
                 <DataGridTextColumn Header="prix réserve" Width="*" Binding="{Binding prix_reserveProperty, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Etat" Width="*" Binding="{Binding etatProperty, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Artiste" Width="*" Binding="{Binding artisteProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="idLot" Width="*" Binding="{Binding idLotProperty, Mode=TwoWay}"/>
                 
 
 

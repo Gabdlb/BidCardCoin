@@ -11,12 +11,12 @@ namespace BidCardCoin
         public int prix_reserve;
         public string etat;
         public string artiste;
-        //public int idLot;
+        public int idLot;
         //public int idVendeur;
 
         public ProduitViewModel() { }
 
-        public ProduitViewModel(int id, string nom, string description, int prix_depart, int prix_reserve, string etat, string artiste)
+        public ProduitViewModel(int id, string nom, string description, int prix_depart, int prix_reserve, string etat, string artiste, int idLot)
         {
             this.idProduit = id;
             this.nomProperty = nom;
@@ -25,7 +25,7 @@ namespace BidCardCoin
             this.prix_reserveProperty = prix_reserve;
             this.etatProperty = etat;
             this.artisteProperty = artiste;
-           //this.idLotProperty = idLot;
+            this.idLotProperty = idLot;
             //this.idVendeurProperty = idVendeur;
 
         }
@@ -89,6 +89,7 @@ namespace BidCardCoin
             set
             {
                 prix_depart = value;
+                OnPropertyChanged("prix_departProperty");
             }
         }
         public int prix_reserveProperty
@@ -97,16 +98,17 @@ namespace BidCardCoin
             set
             {
                 prix_reserve = value;
+                OnPropertyChanged("prix_reserveProperty");
             }
         }
-        //public int idLotProperty
-        //{
-        //    get { return idLot; }
-        //    set
-        //    {
-        //        idLot = value;
-        //    }
-        //}
+        public int idLotProperty
+        {
+            get { return idLot; }
+            set
+            {
+                idLot = value;
+            }
+        }
         //public int idVendeurProperty
         //{
         //    get { return idVendeur; }

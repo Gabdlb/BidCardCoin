@@ -35,21 +35,21 @@ namespace BidCardCoin.Vue.Ajouter
             appliquerContexte();
         }
 
-        public void nomChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.nomProperty = nomTextBox.Text;
+        //public void nomChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    myDataObject.nomProperty = nomTextBox.Text;
            
-        }
-        public void descriptionChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.descriptionProperty = descriptionTextBox.Text;
+        //}
+        //public void descriptionChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    myDataObject.descriptionProperty = descriptionTextBox.Text;
 
-        }
-        public void prixChanged(object sender, TextChangedEventArgs e)
-        {
-            myDataObject.prix_departProperty = Int32.Parse(prixTextBox.Text);
+        //}
+        //public void prixChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    myDataObject.prix_departProperty = Int32.Parse(prixTextBox.Text);
 
-        }
+        //}
 
 
         private void Btn_Ajout(object sender, RoutedEventArgs e)
@@ -67,8 +67,8 @@ namespace BidCardCoin.Vue.Ajouter
             // Comme le contexte des élément de la vue est encore l'ancien LotViewModel,
             // On refait les liens entre age, slider, textbox, bouton et le nouveau LotViewModel
             nomTextBox.DataContext = myDataObject;
-            myDataObject.descriptionProperty = descriptionTextBox.Text;
-            myDataObject.prix_departProperty = Int32.Parse(prixTextBox.Text);
+            descriptionTextBox.DataContext = myDataObject;
+            prixTextBox.DataContext = myDataObject;
             lot.Content = new Lot();
 
         }
@@ -87,8 +87,8 @@ namespace BidCardCoin.Vue.Ajouter
         {
             // Lien avec les textbox
             nomTextBox.DataContext = myDataObject;
-            myDataObject.descriptionProperty = descriptionTextBox.Text;
-            myDataObject.prix_departProperty = Int32.Parse(prixTextBox.Text);
+            descriptionTextBox.DataContext = myDataObject;
+            prixTextBox.DataContext = myDataObject;
 
         }
     }
