@@ -9,7 +9,7 @@
       Title="Vente" Background="DodgerBlue">
 
     <Grid>
-        <DataGrid Name="List_Vente" SelectionChanged="listeVentes_SelectionChanged" Margin="176,256,0,165" AutoGenerateColumns="false" HorizontalAlignment="Left" 
+        <DataGrid Name="List_Vente"  ItemsSource="{Binding}" SelectionChanged="listeVentes_SelectionChanged" Margin="176,256,0,165" AutoGenerateColumns="false" HorizontalAlignment="Left" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="White" Width="1361" BorderThickness="1">
@@ -31,8 +31,7 @@
                 <DataGridTextColumn Header="Attribute" Width="*" Binding="{Binding attributeProperty, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Date début" Width="*" Binding="{Binding date_debutProperty, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Date fin" Width="*" Binding="{Binding date_finProperty, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="heure debut" Width="*" Binding="{Binding heure_debutProperty, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="heure fin" Width="*" Binding="{Binding heure_finProperty, Mode=TwoWay}"/>
+               
 
 
 

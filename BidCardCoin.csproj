@@ -68,23 +68,30 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Ctrl\CategorieViewModel.cs" />
+    <Compile Include="Ctrl\LotViewModel.cs" />
     <Compile Include="Ctrl\Produit_CategorieViewModel.cs" />
     <Compile Include="Ctrl\ProduitViewModel .cs" />
     <Compile Include="Ctrl\VenteViewModel.cs" />
     <Compile Include="DAL\CategorieDAL.cs" />
+    <Compile Include="DAL\LotDAL.cs" />
     <Compile Include="DAL\Produit_CategorieDAL.cs" />
     <Compile Include="DAL\ProduitDAL.cs" />
     <Compile Include="DAL\VenteDAL.cs" />
     <Compile Include="DAO\CategorieDAO.cs" />
+    <Compile Include="DAO\LotDAO.cs" />
     <Compile Include="DAO\Produit_CategorieDAO.cs" />
     <Compile Include="DAO\ProduitDAO.cs" />
     <Compile Include="DAO\VenteDAO.cs" />
     <Compile Include="ORM\CategorieORM.cs" />
+    <Compile Include="ORM\LotORM.cs" />
     <Compile Include="ORM\Produit_CategorieORM.cs" />
     <Compile Include="ORM\ProduitORM.cs" />
     <Compile Include="ORM\VenteORM.cs" />
     <Compile Include="Vue\Ajouter\Ajout_Categorie.xaml.cs">
       <DependentUpon>Ajout_Categorie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Ajouter\Ajout_Lot.xaml.cs">
+      <DependentUpon>Ajout_Lot.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vue\Ajouter\Ajout_Produit.xaml.cs">
       <DependentUpon>Ajout_Produit.xaml</DependentUpon>
@@ -120,6 +127,10 @@
     <Page Include="Vue\Ajouter\Ajout_Categorie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\Ajouter\Ajout_Lot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vue\Ajouter\Ajout_Produit.xaml">
       <SubType>Designer</SubType>

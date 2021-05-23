@@ -5,10 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BidCardCoin.Vue"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Lot">
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Lot" Background="DodgerBlue">
+      
 
     <Grid>
+        <DataGrid Name="List_Lot" ItemsSource="{Binding}" SelectionChanged="listeLots_SelectionChanged" Margin="176,256,0,165" AutoGenerateColumns="false" HorizontalAlignment="Left" 
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="White" Width="1361" BorderThickness="1">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                    <Setter Property="Margin" Value="-1, -1, 0, 0"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Height" Value="50"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="25px"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
 
+                <DataGridTextColumn Header="id" Width="*" Binding="{Binding idLotProperty, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Nom" Width="*" Binding="{Binding nomProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding descriptionProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Prix départ" Width="*" Binding="{Binding prix_departProperty, Mode=TwoWay}"/>
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Ajouter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="1618,556,0,0" Height="82" FontSize="36" Background="black" Click="Btn_AjPrs"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1583,730,0,0" Height="82" FontSize="36" Background="Red" Click="Btn_Sppr"/>
+        <TextBlock HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="413" FontSize="48" FontWeight="Bold"><Run Text="Liste des "/><Run Text="Lots" /></TextBlock>
+
+        <Frame x:Name="lot" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
