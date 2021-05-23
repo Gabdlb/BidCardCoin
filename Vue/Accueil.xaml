@@ -12,20 +12,19 @@
 
         <Image Margin="1790,10,10,-21" Source="/Asset/BCC_Logo.png" Stretch="Fill"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Button Content="Article" MinWidth="100" Background="#86D2FD" Click="Button_Article" Margin="0,0,0,-29" Width="145" FontSize="25"/>
-            <Button Content="Categorie" MinWidth="100" Width="145" Background="#86D2FD" Click="Button_Categorie" Margin="0,0,0,-29" FontSize="25"/>
-            <Button Content="Lieu d'enchère" MinWidth="100" Background="#86D2FD" Click="Button_Lieu" Margin="0,0,0,-29" FontSize="25" Width="178"/>
-            <Button Content="Commissaire priseur" MinWidth="100" Width="248" Background="#86D2FD" Click="Button_Comm" Margin="0,0,0,-29" FontSize="25"/>
-            <Button Content="Personne" MinWidth="100" Background="#86D2FD" Click="Button_Personne" Margin="0,0,0,-29" FontSize="25" Width="136"/>
+            <Button Content="Article" MinWidth="100" Background="#86D2FD" Click="Button_Article" Margin="0,16,0,-32" Width="145" FontSize="25" Height="Auto"/>
+            <Button Content="Categorie" MinWidth="100" Width="145" Background="#86D2FD" Click="Button_Categorie" Margin="0,16,0,-32" FontSize="25" Height="Auto"/>
+            <Button Content="Lieu d'enchère" MinWidth="100" Background="#86D2FD" Click="Button_Lieu" Margin="0,16,0,-32" FontSize="25" Width="209" Height="Auto"/>
+            <Button Content="Commissaire priseur" MinWidth="100" Width="280" Background="#86D2FD" Click="Button_Comm" Margin="0,16,0,-32" FontSize="25" Height="Auto"/>
+            <Button Content="Personne" MinWidth="100" Background="#86D2FD" Click="Button_Personne" Margin="0,16,0,-32" FontSize="25" Width="136" Height="Auto"/>
         </StackPanel>
 
 
         <Rectangle Fill="#3A5C9F" HorizontalAlignment="Left" Height="638" Margin="1142,271,0,-804" Stroke="Black" VerticalAlignment="Top" Width="556"/>
-        <Rectangle Fill="#9AE9E4" HorizontalAlignment="Left" Height="266" Margin="185,271,0,-432" Stroke="Black" VerticalAlignment="Top" Width="288"/>
-        <Rectangle Fill="#5B9CAA" HorizontalAlignment="Left" Height="268" Margin="530,271,0,-434" Stroke="Black" VerticalAlignment="Top" Width="493"/>
-        <Rectangle Fill="#618EB8" HorizontalAlignment="Left" Height="320" Margin="185,589,0,-804" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+    
+        <Rectangle Fill="#618EB8" HorizontalAlignment="Left" Height="320" Margin="197,463,0,-678" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+        <TextBlock HorizontalAlignment="Left" Margin="91,185,0,-327" TextWrapping="Wrap" Text="Bienvenue sur l'application de gestion d'enchères BidCardcoin - BTS SIO 2021" VerticalAlignment="Top" Height="247" Width="1046" FontSize="48"/>
 
         <Frame x:Name="accueil" NavigationUIVisibility="Hidden" Margin="0,106,0,-945"/>
-
     </Grid>
 </Window>

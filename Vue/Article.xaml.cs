@@ -92,6 +92,6 @@ namespace BidCardCoin.Vue
             listeCP.Items.Refresh();
         }
 
-     
+       
     }
 }

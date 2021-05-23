@@ -44,15 +44,15 @@
         </DataGrid>
 
 
-        <Button Content="Ajouter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="1618,556,0,0" Height="82" FontSize="36" Background="LightYellow" Click="Btn_AjArt"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="1618,556,0,0" Height="82" FontSize="36" Background="black" Click="Btn_AjArt"/>
         <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1577,738,0,0" Height="82" FontSize="36" Background="Red"/>
         <TextBlock HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" Text="Liste des articles" VerticalAlignment="Top" Height="62" Width="413" FontSize="48" FontWeight="Bold"/>
 
 
-        <Button Content="Le many to many UwU" HorizontalAlignment="Left" Margin="1640,451,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.5,0.5" Height="60" Click="Btn_ProdCat"/>
+        <Button Content="Associer produit(s) à catégorie(s)" HorizontalAlignment="Left" Margin="1539,451,0,0" VerticalAlignment="Top" Width="240" RenderTransformOrigin="0.5,0.5" Height="67" Click="Btn_ProdCat"/>
 
 
-        <DataGrid Name="listeCP" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="155,619,0,166" BorderBrush="Black" Background="#FFA4A4A4"
+        <DataGrid Name="listeCP" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="155,619,0,166" BorderBrush="Black" Background="LightGreen"
                           ScrollViewer.CanContentScroll="True" 
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
@@ -61,14 +61,15 @@
                 <DataGridTextColumn Width="*" Header="Nom" Binding="{Binding nomProperty, Mode=OneWay}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Click="BtnAfficherCat" Content="Voir Categorie associé" HorizontalAlignment="Left" Margin="1692,336,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="BtnAfficherCat" Content="Voir Categorie associé" HorizontalAlignment="Left" Margin="543,622,0,0" VerticalAlignment="Top" Width="185"/>
         <ComboBox Name="ComboBoxProduit"
                   DisplayMemberPath="nomProperty"
                       SelectedValuePath="idProduitProperty"
-                      SelectedValue="{Binding idProduitProperty}" HorizontalAlignment="Left" Margin="1618,406,0,0" VerticalAlignment="Top" Width="120"/>
+                      SelectedValue="{Binding idProduitProperty}" HorizontalAlignment="Left" Margin="418,626,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="267,626,0,0" TextWrapping="Wrap" Text="Choisir un produit :" VerticalAlignment="Top" Width="151" FontSize="16"/>
+
 
         <Frame x:Name="article" NavigationUIVisibility="Hidden"/>
-        
 
     </Grid>
 
