@@ -25,6 +25,10 @@ namespace BidCardCoin.Vue
             InitializeComponent();
 
         }
+        private void Button_Vente(object sender, RoutedEventArgs e)
+        {
+            accueil.Content = new Vente();
+        }
         private void Button_Article(object sender, RoutedEventArgs e)
         {
             accueil.Content = new Article();

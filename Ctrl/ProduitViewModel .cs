@@ -69,7 +69,7 @@ namespace BidCardCoin
             get { return etat; }
             set
             {
-                this.description = value;
+                this.etat = value;
                 OnPropertyChanged("etatProperty");
             }
         }
@@ -79,7 +79,7 @@ namespace BidCardCoin
             get { return artiste; }
             set
             {
-                this.description = value;
+                this.artiste = value;
                 OnPropertyChanged("artisteProperty");
             }
         }

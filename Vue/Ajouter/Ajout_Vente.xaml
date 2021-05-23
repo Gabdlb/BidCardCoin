@@ -1,0 +1,24 @@
+﻿<Page x:Class="BidCardCoin.Vue.Ajouter.Ajout_Vente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BidCardCoin.Vue.Ajouter"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Ajout_Vente" Background="LightGoldenrodYellow">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50" Width="406" FontSize="48" FontWeight="Bold"><Run Text="Ajouter une vente"/></TextBlock>
+        <TextBox Name="attributeTextBox" TextChanged="attributeChanged" Text="{Binding attributeProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" Margin="826,292,0,0" FontSize="36"/>
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Attribute" VerticalAlignment="Top" Margin="646,308,0,0" FontSize="22" Background="CornflowerBlue"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="date debut" VerticalAlignment="Top" Margin="646,418,0,0" FontSize="22" Background="CornflowerBlue"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="date fin" VerticalAlignment="Top" Margin="646,522,0,0" FontSize="22" Background="CornflowerBlue"/>
+        <Button Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="1075,764,0,0" Height="60" FontSize="24" Background="LawnGreen" Click="Btn_Ajout"/>
+        <Button Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="692,764,0,0" Height="60" FontSize="20" Background="OrangeRed" Click="Btn_Retour"/>
+        <DatePicker Name="dateDebut"  Text="{Binding date_debutProperty, Mode=TwoWay}" HorizontalAlignment="Left" Margin="826,377,0,0" VerticalAlignment="Top" Height="70" Width="371"/>
+        <DatePicker Name="dateFin"  Text="{Binding date_finProperty, Mode=TwoWay}" HorizontalAlignment="Left" Margin="826,491,0,0" VerticalAlignment="Top" Height="60" Width="371"/>
+        <Frame x:Name="vente" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>
