@@ -38,7 +38,27 @@ namespace BidCardCoin.Vue.Ajouter
         {
             myDataObject.nomProperty = nomTextBox.Text;
         }
-       
+
+        public void prixdChanged(object sender, TextChangedEventArgs e)
+        {
+            myDataObject.prix_departProperty = Int32.Parse(prixdTextBox.Text);
+        }
+
+        public void prixrChanged(object sender, TextChangedEventArgs e)
+        {
+            myDataObject.prix_reserveProperty = Int32.Parse(prixrTextBox.Text);
+        }
+
+        public void etatChanged(object sender, TextChangedEventArgs e)
+        {
+            myDataObject.etatProperty = etatTextBox.Text;
+        }
+
+        public void artisteChanged(object sender, TextChangedEventArgs e)
+        {
+            myDataObject.artisteProperty = artisteTextBox.Text;
+        }
+
         private void Btn_Ajout(object sender, RoutedEventArgs e)
         {
             myDataObject.idProduitProperty = ProduitDAL.getMaxIdProduit() + 1;
@@ -55,6 +75,8 @@ namespace BidCardCoin.Vue.Ajouter
             // On refait les liens entre age, slider, textbox, bouton et le nouveau ProduitViewModel
             nomTextBox.DataContext = myDataObject;
             descriptionTextBox.DataContext = myDataObject;
+            etatTextBox.DataContext = myDataObject;
+            artisteTextBox.DataContext = myDataObject;
             Produit.Content = new Article();
 
         }
@@ -74,6 +96,10 @@ namespace BidCardCoin.Vue.Ajouter
             // Lien avec les textbox
             nomTextBox.DataContext = myDataObject;
             descriptionTextBox.DataContext = myDataObject;
+            //etatTextBox.DataContext = myDataObject;
+            //artisteTextBox.DataContext = myDataObject;
         }
+
+       
     }
 }

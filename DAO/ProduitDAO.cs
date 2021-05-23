@@ -13,12 +13,24 @@ namespace BidCardCoin
         public int idProduitDAO;
         public string nomDAO;
         public string descriptionDAO;
+        public int prix_departDAO;
+        public int prix_reserveDAO;
+        public string etatDAO;
+        public string artisteDAO;
+        //public int idLotDAO;
+        //public int idVendeurDAO;
 
-        public ProduitDAO(int idProduitDAO, string nomDAO, string descriptionDAO)
+        public ProduitDAO(int idProduitDAO, string nomDAO, string descriptionDAO, int prix_departDAO, int prix_reserveDAO, string etatDAO, string artisteDAO)
         {
             this.idProduitDAO = idProduitDAO;
             this.nomDAO = nomDAO;
             this.descriptionDAO = descriptionDAO;
+            this.prix_departDAO = prix_departDAO;
+            this.prix_reserveDAO = prix_reserveDAO;
+            this.etatDAO = etatDAO;
+            this.artisteDAO = artisteDAO;
+            //this.idLotDAO = idLotDAO;
+            //this.idVendeurDAO = idVendeurDAO;
         }
 
         public ProduitDAO(string nomDAO)

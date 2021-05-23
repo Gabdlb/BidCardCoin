@@ -33,11 +33,11 @@
                 <DataGridTextColumn Header="id" Width="*" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                 <DataGridTextColumn Header="Nom" Width="*" Binding="{Binding nomProperty, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Description" Width="*" Binding="{Binding descriptionProperty, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="prix départ" Width="*"/>
-                <DataGridTextColumn Header="prix réserve" Width="*"/>
-                <DataGridTextColumn Header="Style" Width="*"/>
-                <DataGridTextColumn Header="Artiste" Width="*"/>
-                <DataGridTextColumn Header="Etat" Width="*"/>
+                <DataGridTextColumn Header="prix départ" Width="*" Binding="{Binding prix_departProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="prix réserve" Width="*" Binding="{Binding prix_reserveProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Etat" Width="*" Binding="{Binding etatProperty, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Artiste" Width="*" Binding="{Binding artisteProperty, Mode=TwoWay}"/>
+                
 
 
             </DataGrid.Columns>
@@ -45,7 +45,7 @@
 
 
         <Button Content="Ajouter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="181" Margin="1618,556,0,0" Height="82" FontSize="36" Background="black" Click="Btn_AjArt"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1577,738,0,0" Height="82" FontSize="36" Background="Red"/>
+        <Button Content="Supprimer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="1577,738,0,0" Height="82" FontSize="36" Background="Red" Click="Btn_Sppr"/>
         <TextBlock HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" Text="Liste des articles" VerticalAlignment="Top" Height="62" Width="413" FontSize="48" FontWeight="Bold"/>
 
 

@@ -10,7 +10,7 @@
 
     <Grid>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="50" Width="516" FontSize="48" FontWeight="Bold"><Run Text="Ajouter une personne"/></TextBlock>
-        <TextBox Name="nomTextBox" TextChanged="nomChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding nomProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,292,0,0" FontSize="36"/>
+
         <TextBox Name="prenomTextBox" TextChanged="prenomChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding prenomProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,402,0,0" FontSize="36"/>
         <TextBox Name="emailTextBox" TextChanged="emailChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding emailProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,506,0,0" FontSize="36"/>
         <TextBox Name="telephoneTextBox" TextChanged="telephoneChanged" HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="{Binding telephoneProperty, Mode=TwoWay}" VerticalAlignment="Top" Width="416" Margin="781,618,0,0" FontSize="36"/>
@@ -20,6 +20,8 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Telephone" VerticalAlignment="Top" Margin="646,634,0,0" FontSize="22" Background="CornflowerBlue"/>
         <Button Click="Btn_Ajout" Content="Valider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="1052,862,0,0" Height="52" FontSize="24" Background="LawnGreen"/>
         <Button Click="Btn_Retour" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="646,882,0,0" Height="32" FontSize="20" Background="OrangeRed"/>
+        <TextBox  Name="nomTextBox" TextChanged="nomChanged" Text="{Binding nomProperty, Mode=TwoWay}" HorizontalAlignment="Left" Height="41" Margin="781,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" FontSize="18"/>
         <Frame x:Name="personne" NavigationUIVisibility="Hidden"/>
+        
     </Grid>
 </Page>

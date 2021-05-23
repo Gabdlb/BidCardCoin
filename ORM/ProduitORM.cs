@@ -13,7 +13,7 @@ namespace BidCardCoin
         public static ProduitViewModel getProduit(int idProduit)
         {
             ProduitDAO pDAO = ProduitDAO.getProduit(idProduit);
-            ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.nomDAO, pDAO.descriptionDAO);
+            ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.nomDAO, pDAO.descriptionDAO, pDAO.prix_departDAO,pDAO.prix_reserveDAO, pDAO.etatDAO, pDAO.artisteDAO);
             return p;
         }
 
@@ -36,7 +36,7 @@ namespace BidCardCoin
             ObservableCollection<ProduitViewModel> l = new ObservableCollection<ProduitViewModel>();
             foreach (ProduitDAO element in lDAO)
             {
-                ProduitViewModel p = new ProduitViewModel(element.idProduitDAO, element.nomDAO, element.descriptionDAO);
+                ProduitViewModel p = new ProduitViewModel(element.idProduitDAO, element.nomDAO, element.descriptionDAO, element.prix_departDAO, element.prix_reserveDAO, element.etatDAO, element.artisteDAO);
                 l.Add(p);
             }
             return l;
@@ -45,7 +45,7 @@ namespace BidCardCoin
 
         public static void updateProduit(ProduitViewModel p)
         {
-            ProduitDAO.updateProduit(new ProduitDAO(p.idProduitProperty, p.nomProperty, p.descriptionProperty));
+            ProduitDAO.updateProduit(new ProduitDAO(p.idProduitProperty, p.nomProperty, p.descriptionProperty, p.prix_departProperty, p.prix_reserveProperty, p.etatProperty, p.artisteProperty));
         }
 
         public static void supprimerProduit(int id)
@@ -55,7 +55,7 @@ namespace BidCardCoin
 
         public static void insertProduit(ProduitViewModel p)
         {
-            ProduitDAO.insertProduit(new ProduitDAO(p.idProduitProperty, p.nomProperty, p.descriptionProperty));
+            ProduitDAO.insertProduit(new ProduitDAO(p.idProduitProperty, p.nomProperty, p.descriptionProperty, p.prix_departProperty, p.prix_reserveProperty, p.etatProperty, p.artisteProperty));
         }
     }
 }
