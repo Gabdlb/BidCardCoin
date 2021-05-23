@@ -16,7 +16,7 @@ namespace BidCardCoin
             if (connection == null) //  si la connexion est déjà ouverte, il ne la refera pas 
             {
                 server = "localhost";
-                database = "bcc2";
+                database = "bcc_final";
                 uid = "root";
                 password = "";
                 string connectionString;

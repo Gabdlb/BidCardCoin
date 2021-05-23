@@ -17,7 +17,7 @@
                               SelectedValuePath="idProduitProperty"
                               SelectedValue="{Binding idProduitProperty}"/>
         <ComboBox Name="ComboBoxCategorie" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="416" Margin="781,402,0,0"
-                              DisplayMemberPath="nomProperty"
+                              DisplayMemberPath="nomsProperty"
                               SelectedValuePath="idCategorieProperty"
                               SelectedValue="{Binding idCategorieProperty}"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Produit" VerticalAlignment="Top" Margin="646,308,0,0" FontSize="22" Background="CornflowerBlue"/>
