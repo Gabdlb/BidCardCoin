@@ -23,9 +23,9 @@
 
 
         <Rectangle Fill="#3A5C9F" HorizontalAlignment="Left" Height="638" Margin="1142,271,0,-804" Stroke="Black" VerticalAlignment="Top" Width="556"/>
-    
-        <Rectangle Fill="#618EB8" HorizontalAlignment="Left" Height="320" Margin="197,463,0,-678" Stroke="Black" VerticalAlignment="Top" Width="838"/>
-        <TextBlock HorizontalAlignment="Left" Margin="91,185,0,-327" TextWrapping="Wrap" Text="Bienvenue sur l'application de gestion d'enchères BidCardcoin - BTS SIO 2021" VerticalAlignment="Top" Height="247" Width="1046" FontSize="48"/>
+
+        <Rectangle Fill="#618EB8" HorizontalAlignment="Left" Height="320" Margin="191,533,0,-748" Stroke="Black" VerticalAlignment="Top" Width="838"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,183,0,-355" TextWrapping="Wrap" VerticalAlignment="Top" Height="277" Width="1100" FontSize="48"><Run Text="Bienvenue sur l'application de gestion d'enchères BidCardcoin - BTS SIO 2021"/><LineBreak/><Run/><LineBreak/><Run Text="Projet réalisé par Gabriel de la Biche et Hugo Divet"/></TextBlock>
 
         <Frame x:Name="accueil" NavigationUIVisibility="Hidden" Margin="0,106,0,-945"/>
     </Grid>
