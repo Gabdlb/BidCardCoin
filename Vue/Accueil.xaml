@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BidCardCoin.Vue"
         mc:Ignorable="d"
-        Title="Accueil" Height="1080" Width="1920">
+        Title="Accueil" Height="1080" Width="1920"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="1912" Background="#437FDB" RenderTransformOrigin="0.5,0.5">
 
         <TextBlock Height="67" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" FontSize="48" Margin="32,12,1546,0" Grid.RowSpan="2"><Run Text="  "/><Run Text="BidGameCoin"/></TextBlock>
