@@ -34,7 +34,7 @@ namespace BidCardCoin
             get { return nom; }
             set
             {
-                nom = value.ToUpper();
+                this.nom = value;
                 OnPropertyChanged("nomsProperty"); // indique au système de binding que la valeur a changé
             }
 
