@@ -42,7 +42,7 @@ namespace BidCardCoin
 
         public static void updateVente(VenteDAO p)
         {
-            string query = "UPDATE Vente set attribute=\"" + p.attributeDAO + "\", date_debut=\"" + p.date_debutDAO + "\", date_fin=\"" + p.date_finDAO + "\" ;";
+            string query = "UPDATE Vente set attribute=\"" + p.attributeDAO + "\", date_debut=\"" + p.date_debutDAO + "\", date_fin=\"" + p.date_finDAO + "\"WHERE id = \"" + p.idVenteDAO + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -50,7 +50,7 @@ namespace BidCardCoin
         public static void insertVente(VenteDAO p)
         {
             int id = getMaxIdVente() + 1;
-            string query = "INSERT INTO Vente (id, attribute, date_debut, date_fin) VALUES (\"" + id + "\",\"" + p.attributeDAO + "\",\"" + p.date_debutDAO + "\",\"" + p.date_finDAO + "\"WHERE id = \"" + p.idVenteDAO + "\";";
+            string query = "INSERT INTO Vente (id, attribute, date_debut, date_fin) VALUES (\"" + id + "\",\"" + p.attributeDAO + "\",\"" + p.date_debutDAO + "\",\"" + p.date_finDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
